@@ -1,0 +1,33 @@
+<!-- header.component.html -->
+<header>
+    <div class="text-div">
+        <p>
+            Anais do Simpósio Latino Americano de Ciências de Alimentos 
+        </p>
+        <p class="title">Anais do 13º Simpósio Latino Americano de Ciência de Alimentos </p>
+        <span>
+            ISSN: 1234-5678
+        </span>
+    </div>
+    <div class="right-header">
+      <select [(ngModel)]="selectedLanguage" (change)="changeLanguage()" class="custom-select">
+        <option value="pt">PT, BR</option>
+        <option value="en-US">Inglês (EUA)</option>
+      </select>
+      <div class="user-div">
+          <div class="user-txt">
+            <span>
+              Bem vindo!
+            </span>
+            <span>
+              alguem12@galoascience.com          
+            </span>
+          </div>
+          <div class="user-icon">
+            <img src="../../../assets/userImage.svg" alt="Ícone do usuário">
+          </div>
+        </div>
+    </div>
+
+  </header>
+  
