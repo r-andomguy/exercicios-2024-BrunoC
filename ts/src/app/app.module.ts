@@ -8,13 +8,16 @@ import { BodyComponent } from './components/bodyComponent/body.component';
 import { NavBarComponent } from './components/navBarComponent/navBar.component';
 import { CardComponent } from './components/cardComponent/card.component';
 import { HeaderComponent } from './components/headerComponent/header.component';
+import { VideoComponent } from './components/videoComponent/video.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     BodyComponent,
     NavBarComponent,
     CardComponent,
-    HeaderComponent
+    HeaderComponent,
+    VideoComponent
   ],
   imports: [
     BrowserModule,
