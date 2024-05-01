@@ -9,6 +9,8 @@ import { NavBarComponent } from './components/navBarComponent/navBar.component';
 import { CardComponent } from './components/cardComponent/card.component';
 import { HeaderComponent } from './components/headerComponent/header.component';
 import { VideoComponent } from './components/videoComponent/video.component';
+import { ResumeComponent } from './components/resumeComponent/resume.component';
+
 
 @NgModule({
   declarations: [
@@ -17,7 +19,8 @@ import { VideoComponent } from './components/videoComponent/video.component';
     NavBarComponent,
     CardComponent,
     HeaderComponent,
-    VideoComponent
+    VideoComponent,
+    ResumeComponent
   ],
   imports: [
     BrowserModule,

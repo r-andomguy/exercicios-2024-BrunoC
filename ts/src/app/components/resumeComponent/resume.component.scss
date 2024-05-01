@@ -1,0 +1,42 @@
+/* resume.component.scss */
+p {
+  max-height: 80px; /* Defina a altura máxima inicial para o texto */
+  overflow: hidden; /* Esconda o texto que exceder a altura máxima */
+  transition: max-height 0.3s ease; /* Adicione uma transição suave para a animação */
+}
+
+.expanded {
+  max-height: none; /* Quando expandido, remova a restrição de altura */
+  transition: max-height 0.3s ease;
+}
+
+
+
+.container{
+  padding: 36px;
+}
+
+.resume-wrapper{
+  border: 1px solid #ECECEC
+}
+
+.resume-title{
+  background: #FDF1EB;
+  padding: 10px;
+  font-weight:500;
+  font-size: 20px;
+}
+
+.resume-text{
+  padding: 10px;
+
+  p{
+    white-space: pre-line;
+
+  }
+}
+.btn-show-more{
+  text-decoration: none;
+  cursor: pointer;
+  color: #ED7839;
+}
