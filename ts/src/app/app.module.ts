@@ -10,7 +10,7 @@ import { CardComponent } from './components/cardComponent/card.component';
 import { HeaderComponent } from './components/headerComponent/header.component';
 import { VideoComponent } from './components/videoComponent/video.component';
 import { ResumeComponent } from './components/resumeComponent/resume.component';
-
+import { TopicComponent } from './components/topicComponent/topic.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,8 @@ import { ResumeComponent } from './components/resumeComponent/resume.component';
     CardComponent,
     HeaderComponent,
     VideoComponent,
-    ResumeComponent
+    ResumeComponent,
+    TopicComponent
   ],
   imports: [
     BrowserModule,
