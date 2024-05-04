@@ -44,7 +44,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 10px;
-    button{
+    a{
       display: flex;
       flex-direction: row;
       gap: 10px;
@@ -62,4 +62,11 @@
   width: 17px;
 }
 
+.footer{
+  display: flex;
+  padding: 36px;
+}
+.footer-img{
+  width: 80%;
+}
 
