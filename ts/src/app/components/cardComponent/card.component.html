@@ -1,0 +1,48 @@
+<div class="cards-container">
+
+    
+    <div [id]="'card-' + topic.id" [ngClass]="{'answered-topic': topic.answers > 1, 'card-wrapper': topic.answers <= 1}" (click)="toggleComments(topic)">
+        
+          <div id="in-card">
+            <div class="recent" *ngIf="showRecent">
+                <i class="fa-solid fa-check-double"></i>
+                <h3>Aguardando feedback dos autores</h3>
+                <p>Editar tópico</p>
+            </div>
+
+            <div class="card-details">
+                <h4 class="ops-topic-subject">{{ topic.subject }}</h4>
+                <p class="author">{{ topic.author }}</p>
+            </div>
+            <p>{{topic.content}}</p>
+        
+            <div class="icons">
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+                <div class="like-btn">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+                <p>{{ topic.likes }} likes</p>
+                <p>{{ topic.answers }} respostas</p>
+            </div>
+        </div>
+
+        
+        <div *ngIf="topic.answers > 1" class="comments-container" [hidden]="!topic.showComments">
+            <div class="comment" *ngFor="let response of topic.responses"  [ngClass]="{'author-comment': getRole(response.author, response.coAuthor) !== ''}">
+                <div class="details">
+                    <h4>{{ response.author }}</h4>
+                    <div class="detail-icons">
+                        <p>{{ getRole(response.author, response.coAuthor) }}</p>
+                        <i *ngIf="getRole(response.author, response.coAuthor) !== ''" class="fa-solid fa-check-double"></i>
+                    </div>
+                </div>
+                <p>{{ response.content }}</p>
+            </div>
+        </div>
+
+    </div>
+
+    
+</div>
+
+

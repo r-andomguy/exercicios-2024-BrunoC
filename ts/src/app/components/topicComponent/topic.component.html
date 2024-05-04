@@ -1,43 +1,64 @@
-<div class="topic-container" #topicContainer>
-    <div class="topic-title">
-        <p>Discussões</p>
-    </div>
-    
-    <div class="topic-wrapper" *ngIf="showTopicWrapper">
-        <div class="topic-text">
-            <h3>Compartilhe suas ideias ou dúvidas com os autores!</h3>
-            <div class="icons">
-                <img src="../../../assets/icone1.svg" alt="Ícone">
-                <img src="../../../assets/icone2.svg" alt="Ícone">
-                <img src="../../../assets/icone3.svg" alt="Ícone">
-            </div>
-            <p>Sabia que o maior estímulo no desenvolvimento científico e cultural é a curiosidade? Deixe seus questionamentos ou sugestões para o autor!</p>
+<div class="wrapper">
+    <div class="topics-container">
+        <div class="topic-title">
+            <p>Discussões</p>
         </div>
-        
-        <a href="#" class="btn-create-topic" (click)="toggleTopic()">
-            <i class="fa-solid fa-plus"></i> criar tópico
-        </a>
-    </div>
 
-    <div *ngIf="!showTopicWrapper && !showTopicSended" class="new-topic" id="new-topic">
-        <span>Tem uma dúvida ou sugestão? Compartilhe seu feedback com os autores!</span>
-        <form (ngSubmit)="sendTopic()">
-            <div>
-                <p>Assunto:</p>
-                <input class="subject" placeholder="Defina um tópico sucinto para notificar os autores...">
-            </div>
-          
-            <div>
-                <p>Conteúdo:</p>
-                <input class="content">
-                <div class="send-wrapper">
-                    <button type="submit">Enviar</button>
+        <div class="topic-container" #topicContainer>
+            <div class="topic-wrapper" *ngIf="showTopicWrapper">
+                <div class="topic-text">
+                    <h3>Compartilhe suas ideias ou dúvidas com os autores!</h3>
+                    <div class="icons">
+                        <img src="../../../assets/icone1.svg" alt="Ícone do usuário">
+                        <img src="../../../assets/icone2.svg" alt="Ícone do usuário">
+                        <img src="../../../assets/icone3.svg" alt="Ícone do usuário">
+                    </div>
+                    <p>Sabia que o maior estímulo no desenvolvimento científico e cultural é a curiosidade? Deixe seus questionamentos ou sugestões para o autor!</p>
                 </div>
+                
+                <a href="#" class="btn-create-topic" (click)="toggleTopic()">
+                    <i class="fa-solid fa-plus"></i> criar tópico
+                </a>
             </div>
-        </form>
+        
+            <div *ngIf="!showTopicWrapper && !showTopicSended" class="new-topic" id="new-topic">
+                <span>Tem uma dúvida ou sugestão? Compartilhe seu feedback com os autores!</span>
+                <form (ngSubmit)="sendTopic()">
+                    <div>
+                        <p>Assunto:</p>
+                        <input [(ngModel)]="subject" class="subject" name="subject" placeholder="Defina um tópico sucinto para notificar os autores...">
+                    </div>
+                  
+                    <div>
+                        <p>Conteúdo:</p>
+                        <input [(ngModel)]="content" class="content" name="content">
+                        <div class="send-wrapper">
+                            <button type="submit">Enviar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        
+            <div class="topic-sended" *ngIf="showTopicSended" id="topic-sended">
+                <div class="sended-text">
+                    <h3>Seu tópico foi enviado com sucesso! :D</h3>
+        
+                    <span>Agradecemos por sua contribuição, uma notificação será enviada ao seu email assim que seu tópico for respondido!</span>
+        
+                    <p>Descubra outros trabalhos!</p>
+                </div>
+        
+                <a class="btn-topic">Criar novo tópico</a>
+            </div>
+    
+        </div>
+        <ul>
+            <li *ngFor="let topic of topics" class="card-item">
+                <app-card [topic]="topic"  [showRecent]="topic.showRecent"></app-card>
+            </li>
+        </ul>
+
     </div>
 
-    <div class="topic-sended" *ngIf="showTopicSended" id="topic-sended">
-        <!-- Conteúdo do topic-sended -->
-    </div>
+
 </div>

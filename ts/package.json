@@ -25,6 +25,7 @@
     "rxjs": "~7.5.0",
     "start-server-and-test": "^2.0.1",
     "tslib": "^2.3.0",
+    "uuidv4": "^6.2.13",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
